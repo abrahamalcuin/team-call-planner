@@ -1,13 +1,19 @@
 # Team time
 
-Four shared weekly availability calendars, hosted on GitHub Pages. No build or dependencies.
+Four recurring Monday–Sunday calendars on GitHub Pages, with green (free), yellow (maybe), and red (unavailable) ranges.
 
-Choose a calendar, enter your name, add exact start/end times, and select **Save via GitHub**. Green means completely free, yellow means maybe/flexible, and red means unavailable. Blank means not set. Click a range or use the range list to edit it. New ranges replace overlapping statuses. Submit the prefilled issue, return to the planner, and refresh. First valid submission claims a calendar for its GitHub author; only subsequent issues by that author update it. Names and availability are public. GitHub login is required to share changes, but viewing requires no login.
+## Use
 
-Timezone switching converts the same absolute instants for every calendar. **My timezone** uses the device timezone without requiring location permission. All 24 hours are available by scrolling. Daylight-saving gaps are rejected; ambiguous repeated times use the occurrence resolved by the timezone conversion. The wall-clock display compresses daylight-saving repeated hours.
+Select an unclaimed calendar, enter your name, and choose **Claim this calendar via GitHub**. Submit the prefilled issue, return, and refresh. The first GitHub author owns that calendar. Subsequent submissions from any other account are ignored, including attempted access restores.
 
-Availability persists in GitHub issues. Drafts and display preferences persist locally. Each submission replaces that member's schedule. Avoid editing one member's schedule on multiple devices at once; discard old drafts and refresh before editing elsewhere. Past blocks older than 35 days are dropped on save. Do not edit or delete historical schedule issue bodies; submit a new schedule instead. Repository owners can moderate incorrect claims by removing the corresponding issues. No account tokens are embedded or requested by the site.
+After claiming, drag empty calendar space to create ranges, drag ranges to move them, and drag their top/bottom edges to resize. Click a range to change its color or remove it. Choose the paint color above the calendars. Click **Save via GitHub**, submit the issue, and refresh to share changes.
 
-## Deployment
+The browser remembers an editing identifier. Claimed calendars are locked in other browsers. The owner can choose **Restore my editing access via GitHub** and submit using the original GitHub account. This transfers editing access to the new browser. The identifier controls UI access; GitHub issue authorship is the authority for shared updates, not the identifier. No GitHub tokens are embedded or requested.
 
-GitHub Pages publishes the root of the `main` branch. Public GitHub API read limits apply; use Refresh to retrieve updates. This is a simple public team planner, not a private calendar service.
+## Weekly timezones
+
+Schedules repeat weekly in the timezone used when saved. The view converts them to the selected timezone for the current week, including Sunday/Monday boundaries. There is no date navigation. Device timezone detection requires no location permission. Daylight-saving gaps are omitted for that week; ambiguous repeated times use the occurrence resolved by the timezone conversion.
+
+Schedules and names are public. GitHub API read limits apply. Refresh retrieves shared changes; drafts stay on the device. The earliest valid weekly claim in issue creation order determines ownership. Avoid editing old issue bodies; submit new updates. Repo owners can moderate claims by removing their issues. This is a simple public planner, not a private calendar service.
+
+GitHub Pages deploys the repository root from `main`. No build or dependencies.
